@@ -1,22 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+import { styles } from "../src/styles";
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Bienvenido a la pantalla de Inicio</Text>
+    <View style={styles.home}>
+      <Text style={styles.text}>
+        Bienvenido a la pantalla de Inicio
+        Aqui estara la lista de pokemons y un buscador
+      </Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  text: {
-    fontSize: 20,
-    color: '#333',
-  },
-});

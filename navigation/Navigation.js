@@ -10,24 +10,35 @@ const Tab = createBottomTabNavigator();
 const MyTabs = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen
-                name="Home"
+            <Tab.Screen                
+                name="PokéDex"
                 component={Home}
                 options={{
-                    tabBarLabel: "Inicio",
+                    tabBarLabel: "Pokemons",
                     tabBarIcon: () => (
                         <MaterialCommunityIcons
                             name="account"
                             size={24}
-                            color="gray"
+                            color="red"
                         />
                     ),
-                    tabBarBadge: 32,
+                   // tabBarBadge: 0,
                 }}
             />
             <Tab.Screen
-                name="Settings"
+                name="Favoritos"
                 component={Settings} 
+                options={{
+                    tabBarLabel: "Favoritos",
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons
+                            name="account"
+                            size={24}
+                            color="red"
+                        />
+                    ),
+                   // tabBarBadge: 0,
+                }}
             />
     
         </Tab.Navigator>
