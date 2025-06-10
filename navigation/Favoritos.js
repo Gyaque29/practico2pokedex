@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { styles } from "../src/styles";
+import { styles } from "../style/styles";
 
 export default function Settings() {
   return (
