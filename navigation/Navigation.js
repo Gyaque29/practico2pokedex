@@ -2,51 +2,66 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import  Home from './Home' ;
-import Settings from './Settings' ;
+import Home from './Home';
+import Settings from './Settings';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen                
-                name="PokéDex"
+            <Tab.Screen
+                name="PokeDex"
                 component={Home}
                 options={{
-                    tabBarLabel: "Pokemons",
+                    tabBarLabel: "PokeDex",
                     tabBarIcon: () => (
-                        <MaterialCommunityIcons
-                            name="account"
+                        <MaterialIcons
+                            name="catching-pokemon"
                             size={24}
-                            color="red"
+                            color="#f00000"
                         />
                     ),
-                   // tabBarBadge: 0,
+                    headerTitleAlign: 'center',
+                    title: 'PokeDex',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 35,
+                        color: '#f00000',
+                    },
+                    // tabBarBadge: 0,
                 }}
             />
             <Tab.Screen
                 name="Favoritos"
-                component={Settings} 
+                component={Settings}
                 options={{
                     tabBarLabel: "Favoritos",
                     tabBarIcon: () => (
                         <MaterialCommunityIcons
-                            name="account"
+                            name="heart"
                             size={24}
-                            color="red"
+                            color="#f00000"
                         />
                     ),
-                   // tabBarBadge: 0,
+                    headerTitleAlign: 'center',
+                    title: 'Favoritos',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 35,
+                        color: '#f00000',
+                    },
+                    // tabBarBadge: 0, // PARA CONTAR LOS FAVORITOS
                 }}
             />
-    
+
         </Tab.Navigator>
     )
 }
 
 const Navigation = () => {
-    return(
+    return (
         <NavigationContainer>
             <MyTabs />
         </NavigationContainer>
