@@ -46,7 +46,7 @@ const MyTabs = () => {
                         />
                     ),
                     headerTitleAlign: 'center',
-                    title: 'Favoritos',
+                    title: 'Poke Favoritos',
                     headerTitleStyle: {
                         fontWeight: 'bold',
                         fontSize: 35,
