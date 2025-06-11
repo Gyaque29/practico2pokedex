@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: colors.ColorTxt,
         fontWeight: "bold",
-        margin: 5,
+        margin: 10,
     },
     input: {
         height: 40,
@@ -41,6 +41,25 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: "#fff",
         color: "#000",
+    },
+    scrollContainer: {
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+    },
+    pokemonBox: {
+        backgroundColor: '#eee',
+        borderRadius: 10,
+        padding: 5,
+        marginRight: 10,
+        width: 120,
+        height: 100,
+        alignItems: 'center',
+        borderColor: '#4CAF50',
+    },
+    pokemonName: {
+        fontSize: 18,
+        textTransform: 'capitalize',
+        fontWeight: "bold",
     },
 
 });

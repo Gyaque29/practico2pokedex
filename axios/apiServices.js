@@ -1,9 +1,9 @@
-import { api } from '.axios/axiosConfig';
+import { api } from './axiosConfig';
 
 const apiServices = {
     getAllPoke: async () => {
         try{
-            const response = await api.get('https://pokeapi.co/api/v2/pokemon?limit=30');
+            const response = await api.get('/api/v2/pokemon?limit=20');
             return response.data
         }catch (error){
             throw error;
@@ -11,7 +11,7 @@ const apiServices = {
     },
     getAnPoke: async (nombre) => {
         try{
-            const response = await api.get(`https://pokeapi.co/api/v2/pokemon/${nombre}`)
+            const response = await api.get(`/api/v2/pokemon/${nombre}`)
             return response.data;
         }catch(error){
             throw error;
