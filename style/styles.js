@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
         marginTop: Platform.OS === 'android' ? 50 : 0
     },
     contenedorPokemons: {
+        paddingTop: 50,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -28,12 +29,20 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.ColorFondo2,
     },
     text: {
-        fontSize: 20,
+        fontSize: 16,
         color: colors.ColorTxt,
         fontWeight: "bold",
         margin: 10,
     },
+    text2: {
+        fontSize: 16,
+        color: "black",
+        fontWeight: "bold",
+        margin: 10,
+        alignItems: 'center',
+    },
     input: {
+        margin: 10,
         height: 40,
         width: 250,
         borderColor: "#ccc",
@@ -56,10 +65,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: '#4CAF50',
     },
-    pokemonName: {
-        fontSize: 18,
-        textTransform: 'capitalize',
-        fontWeight: "bold",
-    },
+    poke: {
+        marginBottom: 50,
+        alignItems: "center",
+    }
 
 });
