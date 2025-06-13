@@ -10,6 +10,7 @@ import apiServices from "../axios/apiServices";
 import { useEffect, useState } from "react";
 import { PokemonDetalle } from "./PokemonDetalle";
 import { Buscador } from "./Buscador";
+import { agregarAFavoritos } from '../storage/FavoritosStorage';
 
 
 export const ListaPokemons = () => {
@@ -32,12 +33,6 @@ export const ListaPokemons = () => {
         };
         fetchPoke();
     }, []);
-
-    // Función para agregar a favoritos
-    const agregarAFavoritos = (pokemon) => {
-        console.log("Agregado a favoritos:", pokemon.name);
-
-    };
 
     return (
         <View>
