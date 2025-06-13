@@ -46,10 +46,10 @@ export default function Favoritos() {
               <View style={{ marginBottom: 20, alignItems: 'center' }}>
                 <Image
                   source={{ uri: item.image }}
-                  style={{ width: 150, height: 150 }}
+                  style={{ width: 200, height: 200 }}
                   resizeMode="contain"
                 />
-                <Text style={styles.text}>{item.name}</Text>
+                <Text style={styles.text}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</Text>
 
                 <Button
                   title="Eliminar"

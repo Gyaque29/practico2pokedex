@@ -3,7 +3,7 @@ import { api } from './axiosConfig';
 const apiServices = {
     getAllPoke: async () => {
         try {
-            const response = await api.get('/api/v2/pokemon?limit=30');
+            const response = await api.get('/api/v2/pokemon?limit=50');
 
             const pokemons = response.data.results; // ← CORREGIDO
 
