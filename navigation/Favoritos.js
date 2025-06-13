@@ -1,8 +1,9 @@
-import { View, Text, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text,Button, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
 import { styles } from '../style/styles';
 import { useFocusEffect } from '@react-navigation/native';
 import { useCallback, useState } from 'react';
 import { obtenerFavoritos, eliminarFavorito } from '../storage/FavoritosStorage';
+import { ImageBackground } from 'react-native';
 
 export default function Favoritos() {
   const [favoritos, setFavoritos] = useState([]);
@@ -26,29 +27,40 @@ export default function Favoritos() {
 
   return (
     <View style={styles.favoritos}>
-        <Text style={styles.text}>Tus Favoritos : </Text>
-      ) : (
-      {favoritos.length === 0 ? (
-        <Text style={styles.text}>No tienes favoritos</Text>
-      ) : (
-        <FlatList
-          data={favoritos}
-          keyExtractor={(item) => item.name}
-          renderItem={({ item }) => (
-            <View style={{ marginBottom: 20, alignItems: 'center' }}>
-              <Image
-                source={{ uri: item.image }}
-                style={{ width: 100, height: 100 }}
-                resizeMode="contain"
-              />
-              <Text style={styles.text}>{item.name}</Text>
-              <TouchableOpacity onPress={() => handleEliminar(item.name)}>
-                <Text style={{ color: 'red', marginTop: 5 }}>Eliminar</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        />
-      )}
+
+      <ImageBackground
+        source={require('../img/pokeballwpp.jpeg')} // Asegurate que exista esta imagen
+        resizeMode="cover" // o "contain", "stretch", etc.
+        style={{ flex: 1, width: '100%' }}
+      >
+
+        <Text style={[styles.text, { textAlign: 'center' }]}>Tus Favoritos :</Text>
+
+        {favoritos.length === 0 ? (
+          <Text style={styles.text}>No tienes favoritos</Text>
+        ) : (
+          <FlatList
+            data={favoritos}
+            keyExtractor={(item) => item.name}
+            renderItem={({ item }) => (
+              <View style={{ marginBottom: 20, alignItems: 'center' }}>
+                <Image
+                  source={{ uri: item.image }}
+                  style={{ width: 150, height: 150 }}
+                  resizeMode="contain"
+                />
+                <Text style={styles.text}>{item.name}</Text>
+
+                <Button
+                  title="Eliminar"
+                  onPress={() => handleEliminar(item.name)}
+                  color="#f57c00"
+                />
+              </View>
+            )}
+          />
+        )}
+      </ImageBackground>
     </View>
   );
 }

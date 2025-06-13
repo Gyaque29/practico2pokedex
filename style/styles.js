@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         backgroundColor: colors.ColorFondo2,
+        width: "100%",
     },
     text: {
         fontSize: 16,

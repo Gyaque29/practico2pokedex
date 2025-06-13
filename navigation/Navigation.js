@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { Image } from 'react-native';
 
 import Pokemons from './Pokemons';
 import Favoritos from './Favoritos';
@@ -24,12 +25,17 @@ const MyTabs = () => {
                             color="#f00000"
                         />
                     ),
+                    headerTitle: () => (
+                            <Image
+                                source={require('../img/pokedex.png')} // Cambiá la ruta según tu imagen
+                                style={{ width: 170, height: 60 }}
+                            />),
                     headerTitleAlign: 'center',
-                    title: 'PokeDex',
                     headerTitleStyle: {
                         fontWeight: 'bold',
                         fontSize: 35,
                         color: '#f00000',
+                        
                     },
                     // tabBarBadge: 0,
                 }}
@@ -47,6 +53,11 @@ const MyTabs = () => {
                             color="#f00000"
                         />
                     ),
+                    headerTitle: () => (
+                            <Image
+                                source={require('../img/pokedex.png')} // Cambiá la ruta según tu imagen
+                                style={{ width: 170, height: 60 }}
+                            />),
                     headerTitleAlign: 'center',
                     title: 'Poke Favoritos',
                     headerTitleStyle: {
