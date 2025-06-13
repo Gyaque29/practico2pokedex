@@ -1,30 +1,54 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native"
+import {
+    View,
+    Text,
+    ScrollView,
+    Image,
+    TouchableOpacity,
+} from "react-native"
 import { styles } from "../style/styles";
 import apiServices from "../axios/apiServices";
 import { useEffect, useState } from "react";
+import { PokemonDetalle } from "./PokemonDetalle";
+import { Buscador } from "./Buscador";
+
 
 export const ListaPokemons = () => {
 
     const [pokemons, setPokemons] = useState([]); //ACA GUARDARE LOS RESULTADOS
-
     const [selectedPokemon, setSelectedPokemon] = useState(null); //POKEMON SELECCIONADO
+    const [busqueda, setBusqueda] = useState("");
 
     useEffect(() => {
         const fetchPoke = async () => {
             try {
                 const data = await apiServices.getAllPoke();
-                console.log("Pokemons con imágenes:", data);
                 setPokemons(data);  // Aquí guardamos el array directamente
+                if (data.length > 0) {
+                    setSelectedPokemon(data[0]);
+                }
             } catch (error) {
                 console.error(error);
             }
         };
-
         fetchPoke();
     }, []);
 
+    // Función para agregar a favoritos
+    const agregarAFavoritos = (pokemon) => {
+        console.log("Agregado a favoritos:", pokemon.name);
+
+    };
+
     return (
-        <View style={{ padding: 10 }}>
+        <View>
+
+            <Buscador
+                busqueda={busqueda}
+                setBusqueda={setBusqueda}
+                pokemons={pokemons}
+                onSeleccionarPokemon={setSelectedPokemon}
+            />
+
             <Text style={styles.text}>Pokemons:</Text>
 
             <ScrollView horizontal style={{ height: 150 }} showsHorizontalScrollIndicator={false}>
@@ -49,28 +73,10 @@ export const ListaPokemons = () => {
             </ScrollView>
 
             {selectedPokemon && (
-                <View style={styles.poke}>
-                    <Text style={styles.text}>{selectedPokemon.name}</Text>
-                    {selectedPokemon.image && (
-                        <Image
-                            source={{ uri: selectedPokemon.image }}
-                            style={{ width: 200, height: 200 }}
-                            resizeMode="contain"
-                        />
-                    )}
-                    <Text style={styles.text}> 
-                         <Text style={styles.text2}>Tipos: </Text>{selectedPokemon.types.join(', ')}
-                    </Text>
-                    <Text style={styles.text}>
-                        <Text style={styles.text2}>Habilidades: </Text>{selectedPokemon.abilities.join(', ')}
-                    </Text>
-                    <Text style={styles.text}>
-                        <Text style={styles.text2}>Peso: </Text>{selectedPokemon.weight / 10} kg
-                    </Text>
-                    <Text style={styles.text}>
-                         <Text style={styles.text2}>Altura: </Text>{selectedPokemon.height / 10} m
-                    </Text>
-                </View>
+                <PokemonDetalle
+                    pokemon={selectedPokemon}
+                    onAgregarFavorito={agregarAFavoritos}
+                />
             )}
         </View>
     )

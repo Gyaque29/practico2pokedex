@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <ScrollView>
       <View style={styles.contenedorPokemons}>
-        <Buscador />
         <ListaPokemons />
       </View>
     </ScrollView>
