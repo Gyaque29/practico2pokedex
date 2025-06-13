@@ -23,15 +23,6 @@ const apiServices = {
 
             return detailedPokemons;
         } catch (error) {
-            console.error("❌ Error en getAllPoke:", error);
-            throw error;
-        }
-    },
-    getAnPoke: async (nombre) => {
-        try {
-            const response = await api.get(`/api/v2/pokemon/${nombre}`)
-            return response.data;
-        } catch (error) {
             throw error;
         }
     },

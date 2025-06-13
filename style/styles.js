@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         marginTop: Platform.OS === 'android' ? 50 : 0
     },
     contenedorPokemons: {
-        paddingTop: 50,
+        paddingTop: 10,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     input: {
         margin: 10,
         height: 40,
-        width: 250,
+        width: "100%",
         borderColor: "#ccc",
         borderWidth: 1,
         borderRadius: 8,
@@ -57,7 +57,6 @@ export const styles = StyleSheet.create({
     },
     pokemonBox: {
         backgroundColor: '#eee',
-        borderRadius: 10,
         padding: 5,
         marginRight: 10,
         width: 120,
@@ -68,6 +67,25 @@ export const styles = StyleSheet.create({
     poke: {
         marginBottom: 50,
         alignItems: "center",
+    },
+    scrollheigt: {
+        height: 150
+    },
+    TouchableOpacity: {
+        marginRight: 20,
+        alignItems: "center"
+    },
+    imagen: {
+        width: 100,
+        height: 100,
+    },
+    imagen2: {
+        width: 200,
+        height: 200,
+    },
+    contbuscar: {
+        width: "100%",
     }
+
 
 });

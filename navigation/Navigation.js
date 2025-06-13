@@ -1,9 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 import Pokemons from './Pokemons';
 import Favoritos from './Favoritos';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 const Tab = createBottomTabNavigator();
 

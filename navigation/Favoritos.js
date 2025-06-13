@@ -13,7 +13,6 @@ export default function Favoritos() {
         const data = await obtenerFavoritos();
         setFavoritos(data);
       };
-
       cargarFavoritos();
     }, [])
   );
