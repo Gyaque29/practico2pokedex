@@ -7,7 +7,6 @@ import { Image } from 'react-native';
 import Pokemons from './Pokemons';
 import Favoritos from './Favoritos';
 
-
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
