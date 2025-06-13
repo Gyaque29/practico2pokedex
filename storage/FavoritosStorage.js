@@ -1,14 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const FAVORITOS_KEY = '@favoritos_pokemons';
+const FAVORITOS_KEY = '@favoritos_pokemons'; //CLAVE PARA GUARDAR EL ARRAY
 
-// Guardar un nuevo pokemon favorito
+// GUARDAR UN NUEVO POKEMON FAVORITO
 export const agregarAFavoritos = async (pokemon) => {
   try {
-    const favoritosJSON = await AsyncStorage.getItem(FAVORITOS_KEY);
-    let favoritos = favoritosJSON ? JSON.parse(favoritosJSON) : [];
+    const favoritosJSON = await AsyncStorage.getItem(FAVORITOS_KEY); //LEO LOS FAVORITOS
+    let favoritos = favoritosJSON ? JSON.parse(favoritosJSON) : []; //SI AHI ALGO LO CONVIERTO EN JSON
 
-    // Evitar duplicados
+    // EVITA DUPLICADOS
     if (!favoritos.find(p => p.name === pokemon.name)) {
       favoritos.push(pokemon);
       await AsyncStorage.setItem(FAVORITOS_KEY, JSON.stringify(favoritos));
@@ -18,7 +18,7 @@ export const agregarAFavoritos = async (pokemon) => {
   }
 };
 
-// Obtener lista completa de favoritos
+// OBTENGO LISTA COMPLETA DE FAVORITOS
 export const obtenerFavoritos = async () => {
   try {
     const favoritosJSON = await AsyncStorage.getItem(FAVORITOS_KEY);
@@ -29,7 +29,7 @@ export const obtenerFavoritos = async () => {
   }
 };
 
-// Eliminar un pokemon favorito por nombre
+// ELIMINO DE FAVORITO POR EL NOMBRE
 export const eliminarFavorito = async (nombrePokemon) => {
   try {
     const favoritosJSON = await AsyncStorage.getItem(FAVORITOS_KEY);
