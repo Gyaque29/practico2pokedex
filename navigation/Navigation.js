@@ -54,10 +54,8 @@ const MyTabs = () => {
                         fontSize: 35,
                         color: '#f00000',
                     },
-                    // tabBarBadge: 0, // PARA CONTAR LOS FAVORITOS
                 }}
             />
-
         </Tab.Navigator>
     )
 }

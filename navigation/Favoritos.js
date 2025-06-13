@@ -26,6 +26,8 @@ export default function Favoritos() {
 
   return (
     <View style={styles.favoritos}>
+        <Text style={styles.text}>Tus Favoritos : </Text>
+      ) : (
       {favoritos.length === 0 ? (
         <Text style={styles.text}>No tienes favoritos</Text>
       ) : (

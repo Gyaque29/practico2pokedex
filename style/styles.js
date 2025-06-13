@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     input: {
         margin: 10,
         height: 40,
-        width: "100%",
+        width: 150,
         borderColor: "#ccc",
         borderWidth: 1,
         borderRadius: 8,
