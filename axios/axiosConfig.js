@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://pokeapi.co',
+    baseURL: 'https://pokeapi.co', //LINK DE LA API
 });

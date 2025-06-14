@@ -26,7 +26,7 @@ const MyTabs = () => {
                     ),
                     headerTitle: () => (
                             <Image
-                                source={require('../img/pokedex.png')} // Cambiá la ruta según tu imagen
+                                source={require('../img/pokedex.png')} // IMG POKEDEX
                                 style={{ width: 170, height: 60 }}
                             />),
                     headerTitleAlign: 'center',
@@ -36,7 +36,6 @@ const MyTabs = () => {
                         color: '#f00000',
                         
                     },
-                    // tabBarBadge: 0,
                 }}
             />
 
@@ -64,6 +63,7 @@ const MyTabs = () => {
                         fontSize: 35,
                         color: '#f00000',
                     },
+                    tabBarBadge: 2,
                 }}
             />
         </Tab.Navigator>

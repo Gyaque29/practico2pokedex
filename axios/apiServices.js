@@ -1,11 +1,11 @@
-import { api } from './axiosConfig';
+import { api } from './axiosConfig'; //IMPORTO EL AXIOS CONFIG CON LA URL BASE DE POKE
 
 const apiServices = {
-    getAllPoke: async () => {
+    getAllPoke: async () => { //FUNCION PARA TRAER TODOS LOS POKEMONS, Y SUS DETALLES
         try {
-            const response = await api.get('/api/v2/pokemon?limit=50');
+            const response = await api.get('/api/v2/pokemon?limit=50'); //CON UN LIMITE DE 50
 
-            const pokemons = response.data.results; // ← CORREGIDO
+            const pokemons = response.data.results;
 
             const detailedPokemons = await Promise.all(
                 pokemons.map(async (pokemon) => {
@@ -20,13 +20,11 @@ const apiServices = {
                     };
                 })
             );
-
             return detailedPokemons;
         } catch (error) {
             throw error;
         }
     },
-
 }
 
 export default apiServices
